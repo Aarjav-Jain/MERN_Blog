@@ -39,7 +39,7 @@ userRouter.post('/login', async function(req, res) {
             return res.json({message: "Invalid username or password"});
         }
         
-        await jwt.sign({id: user._id, username: user.username}, process.env.JWT_SECRET, {}, function(error, token) {
+        jwt.sign({id: user._id, username: user.username}, process.env.JWT_SECRET, {}, function(error, token) {
             if(error) {
                 return res.json({message: "Something went wrong. Try again later."});
             }
@@ -55,11 +55,11 @@ userRouter.post('/login', async function(req, res) {
 userRouter.get("/profile/:token", async function(req, res) {
     try {
         const {token} = req.params;
-        await jwt.verify(token, process.env.JWT_SECRET, {}, function(error, info) {
+        jwt.verify(token, process.env.JWT_SECRET, {}, function(error, info) {
             if(error) {
                 return res.json({message: "Something went wrong. Try again later"});
             }
-
+            // console.log('respone in prfile: ',info)
             return res.json(info);
         })
     }
