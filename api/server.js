@@ -16,7 +16,7 @@ dotenv.config();
 async function connectDB() {
     try {
         await mongoose.connect(process.env.DB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
-        app.listen(process.env.PORT);
+        app.listen(process.env.PORT,() => console.log(`listening at PORT ${process.env.PORT}`));
         console.log("Server running fine");
         console.log("DB connected successfully");
     }

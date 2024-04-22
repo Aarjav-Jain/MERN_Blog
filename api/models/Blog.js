@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export default mongoose.model("Blog", new mongoose.Schema({
+const blogSchema = new mongoose.Schema({
     imageURL: {
         type: String,
         required: true
@@ -31,4 +31,8 @@ export default mongoose.model("Blog", new mongoose.Schema({
         required: true,
         default: Date.now()
     }
-}));
+});
+
+const Blog = mongoose.model('Blog',blogSchema);
+
+export default Blog;

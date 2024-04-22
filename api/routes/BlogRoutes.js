@@ -26,6 +26,9 @@ blogRouter.post("/new/:author", async function(req, res) {
             return res.json({message: "All fields are mandatory"});
         }
 
+
+        // can also be done as const blog = new Blog({...data});
+        // and hten doing await blog.save();
         const blog = await Blog.create({imageURL, heading, summary, description, author});
         user.blogs.push(blog._id);
         await user.save();
