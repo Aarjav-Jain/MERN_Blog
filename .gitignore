@@ -1,0 +1,55 @@
+# Ignore node_modules folders in both api and client directories
+api/node_modules/
+client/node_modules/
+
+# Ignore .env files for API and client
+api/.env
+client/.env
+
+# Ignore build output for React client
+client/build/
+
+# Ignore any other environment specific files
+*.log
+*.env.local
+*.env.production.local
+*.env.test.local
+.env*.backup
+.env*.override
+
+# Ignore yarn lock files
+yarn.lock
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore editor-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore package-lock files
+package-lock.json
+
+# Ignore .eslintcache
+.eslintcache
+
+# Ignore .pnp.js file
+.pnp.js
+
+# Ignore coverage reports
+coverage/
+
+# Ignore any secrets or sensitive information
+*.key
+*.pem
+*.pub
+*.ppk
+*.p12
+
+# Ignore sqlite database files
+*.sqlite
